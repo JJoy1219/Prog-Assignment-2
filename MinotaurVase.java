@@ -31,14 +31,16 @@ class RunnableDemo extends MinotaurVase implements Runnable {
    public void run() {
       //System.out.println("Person " +  threadName );
       try {
-         int randTime = (int)Math.floor(Math.random()*(10)+1);
+         int randTime = (int)Math.floor(Math.random()*(50)+1);
          Thread.sleep(randTime);
          if (roomVacant == true)
          {
             roomVacant = false;
-            System.out.println("Guest " + threadName + " is in the room.");
-            Thread.sleep(5);
+            System.out.println("Guest " + threadName + " has entered the room.");
+            Thread.sleep(10);
+            System.out.println("Guest " + threadName + " has left the room.");
             roomVacant = true;
+            
          }
       } catch (InterruptedException e) {
          System.out.println("Thread " +  threadName + " interrupted.");
